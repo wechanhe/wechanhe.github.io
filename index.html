@@ -369,155 +369,15 @@
 <h3 id="混合协同过滤模型"><a href="#混合协同过滤模型" class="headerlink" title="混合协同过滤模型"></a>混合协同过滤模型</h3><p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-CF.PNG" alt="image"></p>
 <p>模型由三个组件构成：上面和下面分别是aSDAE模型，用于抽取用户和物品的潜在因子；中间是将利用aSDAE生成的用户和物品的潜在因子生成评分矩阵。</p>
 <h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><p>模型根据评分矩阵、用户和物品的评分向量、用户和物品的辅助信息来学习用户和物品的潜在因子表示，目标函数如下：</p>
-<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-loss(a" alt="image">.PNG)</p>
+<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-loss-a.PNG" alt="image"></p>
 <p>论文为了简单起见，将aSDAE的代价参数置为1，得到以下目标函数：</p>
-<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-loss(b" alt="image">.PNG)</p>
+<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-loss-b.PNG" alt="image"></p>
 <p>其中，I是指示矩阵，指示R中的非空矩阵元素，也就是说如果矩阵中的元素不为零，I 不等于 0；否则I 等于 0。a为代价参数，f是正则项用于避免过拟合。</p>
-<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/0298c662b88f1737f845f603a07f5a7d2d7af761/aSDAE/aSDAE-loss(c" alt="image">.PNG)</p>
+<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-loss-c.PNG" alt="image"></p>
 <p>论文使用SGD最优化目标函数。</p>
-<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>实验部分，作者使用movielens数据集（100k和1M）和Book-Crossing数据集，用RMSE和recall@K作为评价指标，baselines:PMF,CMF,CDL,DCF。</p>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>实验部分，作者使用movielens数据集（100k和1M）和Book-Crossing数据集，用RMSE和recall@K作为评价指标，baselines:PMF,CMF,CDL,DCF。实验结果如下：<br><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/evaluate_rmse.PNG" alt="image"></p>
+<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/evaluate_recall%40k.PNG" alt="image"></p>
 
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wechanhe.github.io/2018/08/08/LeetCode题解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Weicheng He">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/haha.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Learing Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/08/LeetCode题解/" itemprop="url">LeetCode题解</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T20:47:57+08:00">
-                2018-08-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
           
         
       
@@ -621,6 +481,147 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Java/" itemprop="url" rel="index">
                     <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wechanhe.github.io/2018/08/08/LeetCode题解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Weicheng He">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/haha.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Learing Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/08/LeetCode题解/" itemprop="url">LeetCode题解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T20:47:57+08:00">
+                2018-08-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
                   </a>
                 </span>
 

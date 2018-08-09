@@ -92,10 +92,12 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE.PNG">
 <meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-enc_dec.PNG">
 <meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-CF.PNG">
-<meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-loss(a">
-<meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-loss(b">
-<meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/0298c662b88f1737f845f603a07f5a7d2d7af761/aSDAE/aSDAE-loss(c">
-<meta property="og:updated_time" content="2018-08-09T06:36:43.969Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-loss-a.PNG">
+<meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-loss-b.PNG">
+<meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-loss-c.PNG">
+<meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/evaluate_rmse.PNG">
+<meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/evaluate_recall%40k.PNG">
+<meta property="og:updated_time" content="2018-08-09T06:45:20.278Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A Hybrid Collaborative Filtering Model with Deep Structure for Recommender Systems，AAAI 2017">
 <meta name="twitter:description" content="背景这篇论文是携程的研究人员发表的。论文指出，虽然已经有不少协同过滤方法应用了辅助信息来缓解冷启动和数据稀疏的问题，但是由于评分矩阵和辅助信息的稀疏性，导致学习到的潜在因子不是非常有效。为了解决这个问题，论文提出一种混合深度协同过滤模型，同时利用评分矩阵和辅助信息来学习潜在因子，最后使用矩阵分解还原评分信息。 模型附加信息栈式去噪自编码器  附加信息去噪自编码器(mDAE)  mDAE的模型结构如">
@@ -373,13 +375,14 @@
 <h3 id="混合协同过滤模型"><a href="#混合协同过滤模型" class="headerlink" title="混合协同过滤模型"></a>混合协同过滤模型</h3><p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-CF.PNG" alt="image"></p>
 <p>模型由三个组件构成：上面和下面分别是aSDAE模型，用于抽取用户和物品的潜在因子；中间是将利用aSDAE生成的用户和物品的潜在因子生成评分矩阵。</p>
 <h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><p>模型根据评分矩阵、用户和物品的评分向量、用户和物品的辅助信息来学习用户和物品的潜在因子表示，目标函数如下：</p>
-<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-loss(a" alt="image">.PNG)</p>
+<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-loss-a.PNG" alt="image"></p>
 <p>论文为了简单起见，将aSDAE的代价参数置为1，得到以下目标函数：</p>
-<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-loss(b" alt="image">.PNG)</p>
+<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-loss-b.PNG" alt="image"></p>
 <p>其中，I是指示矩阵，指示R中的非空矩阵元素，也就是说如果矩阵中的元素不为零，I 不等于 0；否则I 等于 0。a为代价参数，f是正则项用于避免过拟合。</p>
-<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/0298c662b88f1737f845f603a07f5a7d2d7af761/aSDAE/aSDAE-loss(c" alt="image">.PNG)</p>
+<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-loss-c.PNG" alt="image"></p>
 <p>论文使用SGD最优化目标函数。</p>
-<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>实验部分，作者使用movielens数据集（100k和1M）和Book-Crossing数据集，用RMSE和recall@K作为评价指标，baselines:PMF,CMF,CDL,DCF。</p>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>实验部分，作者使用movielens数据集（100k和1M）和Book-Crossing数据集，用RMSE和recall@K作为评价指标，baselines:PMF,CMF,CDL,DCF。实验结果如下：<br><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/evaluate_rmse.PNG" alt="image"></p>
+<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/evaluate_recall%40k.PNG" alt="image"></p>
 
       
     </div>
@@ -412,8 +415,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/08/LeetCode题解/" rel="next" title="LeetCode题解">
-                <i class="fa fa-chevron-left"></i> LeetCode题解
+              <a href="/2018/08/08/java基础/" rel="next" title="java基础">
+                <i class="fa fa-chevron-left"></i> java基础
               </a>
             
           </div>
