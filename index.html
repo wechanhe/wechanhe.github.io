@@ -425,7 +425,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wechanhe.github.io/2018/08/08/java基础/">
+    <link itemprop="mainEntityOfPage" href="https://wechanhe.github.io/2018/08/08/LeetCode题解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Weicheng He">
@@ -444,7 +444,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/08/java基础/" itemprop="url">java基础</a></h1>
+                <a class="post-title-link" href="/2018/08/08/LeetCode题解/" itemprop="url">LeetCode题解</a></h1>
         
 
         <div class="post-meta">
@@ -479,8 +479,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
                   </a>
                 </span>
 
@@ -566,7 +566,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wechanhe.github.io/2018/08/08/LeetCode题解/">
+    <link itemprop="mainEntityOfPage" href="https://wechanhe.github.io/2018/08/08/java基础/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Weicheng He">
@@ -585,7 +585,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/08/LeetCode题解/" itemprop="url">LeetCode题解</a></h1>
+                <a class="post-title-link" href="/2018/08/08/java基础/" itemprop="url">java基础</a></h1>
         
 
         <div class="post-meta">
@@ -620,8 +620,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -800,19 +800,10 @@
       
         
           
-            <ul>
-<li>概述</li>
-</ul>
-<p>这篇论文关注用神经网络技术解决基于隐式反馈的协同过滤问题。论文指出，通过矩阵分解得到的隐含特征，从某种意义来说，是用户或者物品的属性表示，属性之间存在一定的关系，直接用向量的点乘来描述二者的交互。因此，这篇论文提出两种方法：一种是向量的元素对应乘积，另一种是向量拼接然后输入到MLP，还有将二者进行结合。</p>
-<ul>
-<li>问题背景</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/NCF/bg.PNG" alt="image"></p>
+            <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>这篇论文关注用神经网络技术解决基于隐式反馈的协同过滤问题。论文指出，通过矩阵分解得到的隐含特征，从某种意义来说，是用户或者物品的属性表示，属性之间存在一定的关系，直接用向量的点乘来描述二者的交互。因此，这篇论文提出两种方法：一种是向量的元素对应乘积，另一种是向量拼接然后输入到MLP，还有将二者进行结合。</p>
+<h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/NCF/bg.PNG" alt="image"></p>
 <p>前提：用户物品交互矩阵，用Jaccard相似度度量用户之间的相似度，隐含空间用户的相似度用向量的点乘计算。根据图（a）可以得到：s23 &gt; s12 &gt; s13。在隐含空间如图（b）所示。新用户u4的加入，有s41 &gt; s43 &gt; s42。<br>然而在隐含空间已经不能表示出这种关系。所以论文指出，不能简单的用向量的点乘来表示用户物品交互函数，考虑到神经网络可以近似表示任意函数，论文考虑使用多层感知机来描述用户物品交互函数。</p>
-<ul>
-<li>模型</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/NCF/NCF.PNG" alt="image"></p>
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/NCF/NCF.PNG" alt="image"></p>
 <pre><code>输入层：用户和物品的one-hot编码
 嵌入层：是一个全连接层，目的在于将稀疏表示的输入映射到一个稠密向量空间。该层神经元的个数等于隐含空间的维度K
 神经协同过滤层（多层神经网络）：将潜在向量映射到预测分数
@@ -822,25 +813,11 @@ notes：
 （1）可以通过辅助信息生成用户和物品的特征表示，用于缓解冷启动问题；
 （2）模型训练目前用的是pointwise方法，也可以通过成对学习（pairwise learning）的方法进行训练，
 比如：贝叶斯个性化排序、基于间隔的损失。论文目前这部分的工作是空白的。
-</code></pre><ul>
-<li>模型分类</li>
-</ul>
-<p>根据对用户和物品的潜在特征输入到协同过滤层之前操作的不同，分成GMF和MLP。GMF和MLP分别对用户和物品做Embedding操作，得到维度不同的隐含向量，原因主要是不同模型最优的Embedding维度也是不同的。GMF将用户和物品的隐含特征输入到神经协同过滤层，这里只有一层，对用户和物品的潜在特征向量做元素对应乘积，然后输出到输出层，这里主要通过元素对应乘积操作之后到输出层之间的参数和输出层的激活函数共同决定模型的性能；而MLP将用户和物品的隐含特征后输入到多层感知机，将二者做拼接之后，通过多层隐藏层来学习用户和物品隐含特征的交互函数。最后还有将两种模型结合起来的NeuMF模型，如下图所示。这种混合模型通过对两种模型进行预训练，得到模型的参数用于NeuCF模型的初始化参数。从下图可以看到有一层NeuCF层，这一层的作用是将两个模型的结果分别<b>加权</b>后做拼接，然后输出到输出层，从而得到最后的预测结果。</p>
+</code></pre><h3 id="模型分类"><a href="#模型分类" class="headerlink" title="模型分类"></a>模型分类</h3><p>根据对用户和物品的潜在特征输入到协同过滤层之前操作的不同，分成GMF和MLP。GMF和MLP分别对用户和物品做Embedding操作，得到维度不同的隐含向量，原因主要是不同模型最优的Embedding维度也是不同的。GMF将用户和物品的隐含特征输入到神经协同过滤层，这里只有一层，对用户和物品的潜在特征向量做元素对应乘积，然后输出到输出层，这里主要通过元素对应乘积操作之后到输出层之间的参数和输出层的激活函数共同决定模型的性能；而MLP将用户和物品的隐含特征后输入到多层感知机，将二者做拼接之后，通过多层隐藏层来学习用户和物品隐含特征的交互函数。最后还有将两种模型结合起来的NeuMF模型，如下图所示。这种混合模型通过对两种模型进行预训练，得到模型的参数用于NeuCF模型的初始化参数。从下图可以看到有一层NeuCF层，这一层的作用是将两个模型的结果分别<b>加权</b>后做拼接，然后输出到输出层，从而得到最后的预测结果。</p>
 <p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/NCF/NeuMF.PNG" alt="image"></p>
-<ul>
-<li>损失函数</li>
-</ul>
-<p>损失函数使用<a href="https://en.wikipedia.org/wiki/Cross_entropy" target="_blank" rel="noopener">交叉熵损失函数</a>，用随机梯度下降算法（SGD）最优化损失函数</p>
+<h3 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h3><p>损失函数使用<a href="https://en.wikipedia.org/wiki/Cross_entropy" target="_blank" rel="noopener">交叉熵损失函数</a>，用随机梯度下降算法（SGD）最优化损失函数</p>
 <p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/NCF/NCF-loss.PNG" alt="image"></p>
-<ul>
-<li>实验</li>
-</ul>
-<p>实验部分作者使用留一法，主要做了三组对比实验，分别是：性能比较（Baselines:ItemPop,ItemKNN,BPR,eALS）、负样本数量的影响、MLP层数的影响、NeuCF两个模型有无预训练的影响。</p>
-<p>2、Outer Product-based Neural Collaborative Filtering,Xiangnan He,IJCAI 2018</p>
-<ul>
-<li>概述</li>
-</ul>
-<p>这篇论文继续研究隐含特征交互函数设计。提出向量的外积操作（第一个向量的每一个元素乘上第二个向量所有元素，生成K*K矩阵，K是隐含空间的维度），<br>生成的矩阵输入到一个卷积神经网络（因为如果输入到普通的多层感知机，网络的参数数量会非常大）。</p>
+<h3 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h3><p>实验部分作者使用留一法，主要做了三组对比实验，分别是：性能比较（Baselines:ItemPop,ItemKNN,BPR,eALS）、负样本数量的影响、MLP层数的影响、NeuCF两个模型有无预训练的影响。</p>
 
           
         
