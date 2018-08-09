@@ -815,9 +815,9 @@ notes：
 比如：贝叶斯个性化排序、基于间隔的损失。论文目前这部分的工作是空白的。
 </code></pre><h3 id="模型分类"><a href="#模型分类" class="headerlink" title="模型分类"></a>模型分类</h3><p>根据对用户和物品的潜在特征输入到协同过滤层之前操作的不同，分成GMF和MLP。GMF和MLP分别对用户和物品做Embedding操作，得到维度不同的隐含向量，原因主要是不同模型最优的Embedding维度也是不同的。GMF将用户和物品的隐含特征输入到神经协同过滤层，这里只有一层，对用户和物品的潜在特征向量做元素对应乘积，然后输出到输出层，这里主要通过元素对应乘积操作之后到输出层之间的参数和输出层的激活函数共同决定模型的性能；而MLP将用户和物品的隐含特征后输入到多层感知机，将二者做拼接之后，通过多层隐藏层来学习用户和物品隐含特征的交互函数。最后还有将两种模型结合起来的NeuMF模型，如下图所示。这种混合模型通过对两种模型进行预训练，得到模型的参数用于NeuCF模型的初始化参数。从下图可以看到有一层NeuCF层，这一层的作用是将两个模型的结果分别<b>加权</b>后做拼接，然后输出到输出层，从而得到最后的预测结果。</p>
 <p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/NCF/NeuMF.PNG" alt="image"></p>
-<h3 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h3><p>损失函数使用<a href="https://en.wikipedia.org/wiki/Cross_entropy" target="_blank" rel="noopener">交叉熵损失函数</a>，用随机梯度下降算法（SGD）最优化损失函数</p>
+<h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><p>损失函数使用<a href="https://en.wikipedia.org/wiki/Cross_entropy" target="_blank" rel="noopener">交叉熵损失函数</a>，用随机梯度下降算法（SGD）最优化损失函数</p>
 <p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/NCF/NCF-loss.PNG" alt="image"></p>
-<h3 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h3><p>实验部分作者使用留一法，主要做了三组对比实验，分别是：性能比较（Baselines:ItemPop,ItemKNN,BPR,eALS）、负样本数量的影响、MLP层数的影响、NeuCF两个模型有无预训练的影响。</p>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>实验部分作者使用留一法，主要做了三组对比实验，分别是：性能比较（Baselines:ItemPop,ItemKNN,BPR,eALS）、负样本数量的影响、MLP层数的影响、NeuCF两个模型有无预训练的影响。</p>
 
           
         
