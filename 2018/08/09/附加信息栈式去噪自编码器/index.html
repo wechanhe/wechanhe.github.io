@@ -81,13 +81,13 @@
 
 
 
-<meta name="description" content="背景这篇论文是携程的研究人员发表的。论文指出，虽然已经有不少协同过滤方法应用了辅助信息来缓解冷启动和数据稀疏的问题，但是由于评分矩阵和辅助信息的稀疏性，导致学习到的潜在因子不是非常有效。为了解决这个问题，论文提出一种混合深度协同过滤模型，同时利用评分矩阵和辅助信息来学习潜在因子，最后使用矩阵分解还原评分信息。 模型附加信息栈式去噪自编码器  附加信息去噪自编码器(mDAE)  mDAE的模型结构如">
+<meta name="description" content="背景这篇论文是携程的研究人员发表的。论文指出，虽然已经有不少协同过滤方法应用了辅助信息来缓解冷启动和数据稀疏的问题，但是由于评分矩阵和辅助信息的稀疏性，导致学习到的潜在因子不是非常有效。为了解决这个问题，论文提出一种混合深度协同过滤模型，同时利用评分矩阵和辅助信息来学习潜在因子，最后使用矩阵分解还原评分信息。 模型附加信息栈式去噪自编码器  附加信息去噪自编码器(aDAE)  mDAE的模型结构如">
 <meta name="keywords" content="推荐算法,深度学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="A Hybrid Collaborative Filtering Model with Deep Structure for Recommender Systems，AAAI 2017">
 <meta property="og:url" content="https://wechanhe.github.io/2018/08/09/附加信息栈式去噪自编码器/index.html">
 <meta property="og:site_name" content="Learing Notes">
-<meta property="og:description" content="背景这篇论文是携程的研究人员发表的。论文指出，虽然已经有不少协同过滤方法应用了辅助信息来缓解冷启动和数据稀疏的问题，但是由于评分矩阵和辅助信息的稀疏性，导致学习到的潜在因子不是非常有效。为了解决这个问题，论文提出一种混合深度协同过滤模型，同时利用评分矩阵和辅助信息来学习潜在因子，最后使用矩阵分解还原评分信息。 模型附加信息栈式去噪自编码器  附加信息去噪自编码器(mDAE)  mDAE的模型结构如">
+<meta property="og:description" content="背景这篇论文是携程的研究人员发表的。论文指出，虽然已经有不少协同过滤方法应用了辅助信息来缓解冷启动和数据稀疏的问题，但是由于评分矩阵和辅助信息的稀疏性，导致学习到的潜在因子不是非常有效。为了解决这个问题，论文提出一种混合深度协同过滤模型，同时利用评分矩阵和辅助信息来学习潜在因子，最后使用矩阵分解还原评分信息。 模型附加信息栈式去噪自编码器  附加信息去噪自编码器(aDAE)  mDAE的模型结构如">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE.PNG">
 <meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-enc_dec.PNG">
@@ -97,10 +97,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-loss-c.PNG">
 <meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/evaluate_rmse.PNG">
 <meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/evaluate_recall%40k.PNG">
-<meta property="og:updated_time" content="2018-08-09T06:45:20.278Z">
+<meta property="og:updated_time" content="2018-08-10T01:58:35.699Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A Hybrid Collaborative Filtering Model with Deep Structure for Recommender Systems，AAAI 2017">
-<meta name="twitter:description" content="背景这篇论文是携程的研究人员发表的。论文指出，虽然已经有不少协同过滤方法应用了辅助信息来缓解冷启动和数据稀疏的问题，但是由于评分矩阵和辅助信息的稀疏性，导致学习到的潜在因子不是非常有效。为了解决这个问题，论文提出一种混合深度协同过滤模型，同时利用评分矩阵和辅助信息来学习潜在因子，最后使用矩阵分解还原评分信息。 模型附加信息栈式去噪自编码器  附加信息去噪自编码器(mDAE)  mDAE的模型结构如">
+<meta name="twitter:description" content="背景这篇论文是携程的研究人员发表的。论文指出，虽然已经有不少协同过滤方法应用了辅助信息来缓解冷启动和数据稀疏的问题，但是由于评分矩阵和辅助信息的稀疏性，导致学习到的潜在因子不是非常有效。为了解决这个问题，论文提出一种混合深度协同过滤模型，同时利用评分矩阵和辅助信息来学习潜在因子，最后使用矩阵分解还原评分信息。 模型附加信息栈式去噪自编码器  附加信息去噪自编码器(aDAE)  mDAE的模型结构如">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE.PNG">
 
 
@@ -277,7 +277,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Weicheng He">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/haha.jpg">
+      <meta itemprop="image" content="/images/hh.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -364,14 +364,14 @@
         <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>这篇论文是携程的研究人员发表的。论文指出，虽然已经有不少协同过滤方法应用了辅助信息来缓解冷启动和数据稀疏的问题，但是由于评分矩阵和辅助信息的稀疏性，导致学习到的潜在因子不是非常有效。为了解决这个问题，论文提出一种混合深度协同过滤模型，同时利用评分矩阵和辅助信息来学习潜在因子，最后使用矩阵分解还原评分信息。</p>
 <h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><h3 id="附加信息栈式去噪自编码器"><a href="#附加信息栈式去噪自编码器" class="headerlink" title="附加信息栈式去噪自编码器"></a>附加信息栈式去噪自编码器</h3><p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE.PNG" alt="image"></p>
 <ul>
-<li>附加信息去噪自编码器(mDAE)</li>
+<li>附加信息去噪自编码器(aDAE)</li>
 </ul>
 <p>mDAE的模型结构如上图（a）所示，可以看成是改进的三层自编码器结构，其中：输入层是评分向量的损坏版本，也就是在原始的评分向量中加入了噪声，一般来说，有两种加入噪声的做法：<a href="https://en.wikipedia.org/wiki/Additive_white_Gaussian_noise" target="_blank" rel="noopener">加性各向同性高斯噪声或二进制掩蔽噪声</a>。添加噪声的目的是为了学习到更具鲁棒性、更有效的特征表示。隐藏层的输入包含两个两方面，一部分来自输入层，另一部分来自辅助信息层，辅助信息层的输入是编码并做加入噪声后的辅助信息向量。输出层包含两个部分，分别是重构之后的评分向量以及辅助信息向量。编码解码过程如下所示，h其实就可以看作是用户或者物品的潜在因子。</p>
 <p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-enc_dec.PNG" alt="image"></p>
 <ul>
-<li>附加信息栈式去噪自编码器(mSDAE)</li>
+<li>附加信息栈式去噪自编码器(aSDAE)</li>
 </ul>
-<p>理解了上面的模型，那么mSDAE也就容易理解了。如上图（b）所示，可以看到mSDAE是在普通的mDAE的结构上，将多个mDAE堆叠起来构成的。这样做的原因主要是多层的神经网络可以在隐藏层产生更加丰富的表示，从而提升性能。</p>
+<p>理解了上面的模型，那么aSDAE也就容易理解了。如上图（b）所示，可以看到aSDAE是在普通的aDAE的结构上，将多个aDAE堆叠起来构成的。这样做的原因主要是多层的神经网络可以在隐藏层产生更加丰富的表示，从而提升性能。</p>
 <h3 id="混合协同过滤模型"><a href="#混合协同过滤模型" class="headerlink" title="混合协同过滤模型"></a>混合协同过滤模型</h3><p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/aSDAE/aSDAE-CF.PNG" alt="image"></p>
 <p>模型由三个组件构成：上面和下面分别是aSDAE模型，用于抽取用户和物品的潜在因子；中间是将利用aSDAE生成的用户和物品的潜在因子生成评分矩阵。</p>
 <h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><p>模型根据评分矩阵、用户和物品的评分向量、用户和物品的辅助信息来学习用户和物品的潜在因子表示，目标函数如下：</p>
@@ -424,6 +424,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/27/BPR/" rel="prev" title="A Hybrid Collaborative Filtering Model with Deep Structure for Recommender Systems，AAAI 2017">
+                A Hybrid Collaborative Filtering Model with Deep Structure for Recommender Systems，AAAI 2017 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -490,7 +494,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/images/haha.jpg"
+                src="/images/hh.jpg"
                 alt="Weicheng He" />
             
               <p class="site-author-name" itemprop="name">Weicheng He</p>
@@ -504,7 +508,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -526,7 +530,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

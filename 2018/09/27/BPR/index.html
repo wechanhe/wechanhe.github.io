@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="LeetCode," />
+  <meta name="keywords" content="推荐算法,隐式反馈,pairwise ranking," />
 
 
 
@@ -81,18 +81,27 @@
 
 
 
-<meta name="description" content="不积跬步，无以至千里">
-<meta name="keywords" content="LeetCode">
+<meta name="description" content="BPR: Bayesian Personalized Ranking from Implicit Feedback摘要物品推荐是在物品集合中预测出个性排序列表的一项任务。从隐式反馈中做个性推荐的方法有很多，比如矩阵分解、k近邻等。虽然这些方法都可用于物品个性化推荐，但是他们都没有直接对排序做优化。这篇论文提出了一种通用的应用于个性化排序的优化方法，这种方法称为BPR-OPT。BPR-OPT是对问题">
+<meta name="keywords" content="推荐算法,隐式反馈,pairwise ranking">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode题解">
-<meta property="og:url" content="https://wechanhe.github.io/2018/08/08/LeetCode题解/index.html">
+<meta property="og:title" content="A Hybrid Collaborative Filtering Model with Deep Structure for Recommender Systems，AAAI 2017">
+<meta property="og:url" content="https://wechanhe.github.io/2018/09/27/BPR/index.html">
 <meta property="og:site_name" content="Learing Notes">
-<meta property="og:description" content="不积跬步，无以至千里">
+<meta property="og:description" content="BPR: Bayesian Personalized Ranking from Implicit Feedback摘要物品推荐是在物品集合中预测出个性排序列表的一项任务。从隐式反馈中做个性推荐的方法有很多，比如矩阵分解、k近邻等。虽然这些方法都可用于物品个性化推荐，但是他们都没有直接对排序做优化。这篇论文提出了一种通用的应用于个性化排序的优化方法，这种方法称为BPR-OPT。BPR-OPT是对问题">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-08T12:54:09.275Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/MF.PNG">
+<meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/MF-element.PNG">
+<meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/BPR_1.PNG">
+<meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/BPR_2.PNG">
+<meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/BPR_3.PNG">
+<meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/BPR_4.PNG">
+<meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/BPR_5.PNG">
+<meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/BPR_6.PNG">
+<meta property="og:updated_time" content="2018-09-27T11:56:06.239Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode题解">
-<meta name="twitter:description" content="不积跬步，无以至千里">
+<meta name="twitter:title" content="A Hybrid Collaborative Filtering Model with Deep Structure for Recommender Systems，AAAI 2017">
+<meta name="twitter:description" content="BPR: Bayesian Personalized Ranking from Implicit Feedback摘要物品推荐是在物品集合中预测出个性排序列表的一项任务。从隐式反馈中做个性推荐的方法有很多，比如矩阵分解、k近邻等。虽然这些方法都可用于物品个性化推荐，但是他们都没有直接对排序做优化。这篇论文提出了一种通用的应用于个性化排序的优化方法，这种方法称为BPR-OPT。BPR-OPT是对问题">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/MF.PNG">
 
 
 
@@ -122,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://wechanhe.github.io/2018/08/08/LeetCode题解/"/>
+  <link rel="canonical" href="https://wechanhe.github.io/2018/09/27/BPR/"/>
 
 
 
 
 
-  <title>LeetCode题解 | Learing Notes</title>
+  <title>A Hybrid Collaborative Filtering Model with Deep Structure for Recommender Systems，AAAI 2017 | Learing Notes</title>
   
 
 
@@ -263,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wechanhe.github.io/2018/08/08/LeetCode题解/">
+    <link itemprop="mainEntityOfPage" href="https://wechanhe.github.io/2018/09/27/BPR/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Weicheng He">
@@ -280,7 +289,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode题解</h1>
+          <h1 class="post-title" itemprop="name headline">A Hybrid Collaborative Filtering Model with Deep Structure for Recommender Systems，AAAI 2017</h1>
         
 
         <div class="post-meta">
@@ -292,8 +301,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T20:47:57+08:00">
-                2018-08-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-27T19:55:00+08:00">
+                2018-09-27
               </time>
             
 
@@ -315,8 +324,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
+                  <a href="/categories/论文阅读笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">论文阅读笔记</span>
                   </a>
                 </span>
 
@@ -352,7 +361,35 @@
       
 
       
-        
+        <h1 id="BPR-Bayesian-Personalized-Ranking-from-Implicit-Feedback"><a href="#BPR-Bayesian-Personalized-Ranking-from-Implicit-Feedback" class="headerlink" title="BPR: Bayesian Personalized Ranking from Implicit Feedback"></a>BPR: Bayesian Personalized Ranking from Implicit Feedback</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>物品推荐是在物品集合中预测出个性排序列表的一项任务。从隐式反馈中做个性推荐的方法有很多，比如矩阵分解、k近邻等。虽然这些方法都可用于物品个性化推荐，但是他们都没有直接对排序做优化。这篇论文提出了一种通用的应用于个性化排序的优化方法，这种方法称为BPR-OPT。BPR-OPT是对问题做贝叶斯理论分析后，通过最大化后验概率进行排序。针对BPR-OPT模型，论文提出了一种基于SGD的自采样学习算法。<br>BPR是一种基于矩阵分解的排序算法，与funkSVD之类的算法比，它不是做全局的评分优化，而是针对每一个用户自己的商品喜好分贝做排序优化。因此在迭代优化的思路上完全不同。同时对于训练集的要求也是不一样的，funkSVD只需要用户物品对应评分数据二元组做训练集，而BPR则需要用户对商品的喜好排序三元组做训练集。<br>在实际产品中，BPR之类的推荐排序在海量数据中选择极少量数据做推荐的时候有优势，因此在某宝某东等大厂中应用也很广泛。</p>
+<h2 id="BPR模型"><a href="#BPR模型" class="headerlink" title="BPR模型"></a>BPR模型</h2><h3 id="模型介绍"><a href="#模型介绍" class="headerlink" title="模型介绍"></a>模型介绍</h3><p>BPR基于矩阵分解模型，给定用户集U和物品集I，以及稀疏的用户-物品交互矩阵X，通过矩阵分解得到低维的用户矩阵W（|U|<em>k）和物品矩阵H（|I|</em>k）。通过优化算法使得X^尽可能与实际的X相近。</p>
+<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/MF.PNG" alt="image"></p>
+<p>用户u对物品i的喜好程度通过用户向量wu和物品向量hi计算得到。<br><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/MF-element.PNG" alt="image"></p>
+<h3 id="BPR优化算法"><a href="#BPR优化算法" class="headerlink" title="BPR优化算法"></a>BPR优化算法</h3><p>BPR算法中，三元组&lt;u,i,j&gt;表示对于用户u来说，物品i的排序比j靠前，&gt;u表示用户u对应的所有物品的全序关系。BPR基于最大化估计P(W,H|&gt;u)来求解模型参数W，H。</p>
+<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/BPR_1.PNG" alt="image"></p>
+<p>论文做了两个假设：</p>
+<ol>
+<li>每个用户之间的偏好行为相互独立，即用户u在商品i和j之间的偏好和其他用户无关。</li>
+<li>同一用户对不同物品的偏序相互独立，也就是用户u在商品i和j之间的偏好和其他的商品无关。</li>
+</ol>
+<p>基于假设一，有：</p>
+<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/BPR_2.PNG" alt="image"></p>
+<p>那么现在求解分成两部分。</p>
+<ul>
+<li>第一部分</li>
+</ul>
+<p>基于假设二，有：</p>
+<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/BPR_3.PNG" alt="image"></p>
+<p>P(i &gt;u j|θ)可以通过以下式子求解：</p>
+<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/BPR_4.PNG" alt="image"></p>
+<p>σ(x)是sigmoid函数，σ里面的项我们可以理解为用户u对i和j偏好程度的差异，那么最简单的计算方法就是差值。</p>
+<ul>
+<li>第二部分<br>论文使用贝叶斯假设，假设该概率分布符合正态分布。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/BPR_5.PNG" alt="image"></p>
+<p>基于以上推导，最终的最大后验估计函数为：</p>
+<p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/BPR_6.PNG" alt="image"></p>
+
       
     </div>
     
@@ -369,7 +406,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+            <a href="/tags/推荐算法/" rel="tag"># 推荐算法</a>
+          
+            <a href="/tags/隐式反馈/" rel="tag"># 隐式反馈</a>
+          
+            <a href="/tags/pairwise-ranking/" rel="tag"># pairwise ranking</a>
           
         </div>
       
@@ -382,8 +423,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/08/java基础/" rel="next" title="java基础">
-                <i class="fa fa-chevron-left"></i> java基础
+              <a href="/2018/08/09/附加信息栈式去噪自编码器/" rel="next" title="A Hybrid Collaborative Filtering Model with Deep Structure for Recommender Systems，AAAI 2017">
+                <i class="fa fa-chevron-left"></i> A Hybrid Collaborative Filtering Model with Deep Structure for Recommender Systems，AAAI 2017
               </a>
             
           </div>
@@ -391,10 +432,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/09/附加信息栈式去噪自编码器/" rel="prev" title="A Hybrid Collaborative Filtering Model with Deep Structure for Recommender Systems，AAAI 2017">
-                A Hybrid Collaborative Filtering Model with Deep Structure for Recommender Systems，AAAI 2017 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -446,8 +483,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -562,6 +608,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BPR-Bayesian-Personalized-Ranking-from-Implicit-Feedback"><span class="nav-number">1.</span> <span class="nav-text">BPR: Bayesian Personalized Ranking from Implicit Feedback</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BPR模型"><span class="nav-number">1.2.</span> <span class="nav-text">BPR模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型介绍"><span class="nav-number">1.2.1.</span> <span class="nav-text">模型介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BPR优化算法"><span class="nav-number">1.2.2.</span> <span class="nav-text">BPR优化算法</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
