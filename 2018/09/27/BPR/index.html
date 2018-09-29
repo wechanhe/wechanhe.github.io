@@ -81,13 +81,13 @@
 
 
 
-<meta name="description" content="BPR: Bayesian Personalized Ranking from Implicit Feedback摘要物品推荐是在物品集合中预测出个性排序列表的一项任务。从隐式反馈中做个性推荐的方法有很多，比如矩阵分解、k近邻等。虽然这些方法都可用于物品个性化推荐，但是他们都没有直接对排序做优化。这篇论文提出了一种通用的应用于个性化排序的优化方法，这种方法称为BPR-OPT。BPR-OPT是对问题">
+<meta name="description" content="摘要物品推荐是在物品集合中预测出个性排序列表的一项任务。从隐式反馈中做个性推荐的方法有很多，比如矩阵分解、k近邻等。虽然这些方法都可用于物品个性化推荐，但是他们都没有直接对排序做优化。这篇论文提出了一种通用的应用于个性化排序的优化方法，这种方法称为BPR-OPT。BPR-OPT是对问题做贝叶斯理论分析后，通过最大化后验概率进行排序。针对BPR-OPT模型，论文提出了一种基于SGD的自采样学习算法。">
 <meta name="keywords" content="推荐算法,隐式反馈,pairwise ranking">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BPR: Bayesian Personalized Ranking from Implicit Feedback">
 <meta property="og:url" content="https://wechanhe.github.io/2018/09/27/BPR/index.html">
 <meta property="og:site_name" content="Learing Notes">
-<meta property="og:description" content="BPR: Bayesian Personalized Ranking from Implicit Feedback摘要物品推荐是在物品集合中预测出个性排序列表的一项任务。从隐式反馈中做个性推荐的方法有很多，比如矩阵分解、k近邻等。虽然这些方法都可用于物品个性化推荐，但是他们都没有直接对排序做优化。这篇论文提出了一种通用的应用于个性化排序的优化方法，这种方法称为BPR-OPT。BPR-OPT是对问题">
+<meta property="og:description" content="摘要物品推荐是在物品集合中预测出个性排序列表的一项任务。从隐式反馈中做个性推荐的方法有很多，比如矩阵分解、k近邻等。虽然这些方法都可用于物品个性化推荐，但是他们都没有直接对排序做优化。这篇论文提出了一种通用的应用于个性化排序的优化方法，这种方法称为BPR-OPT。BPR-OPT是对问题做贝叶斯理论分析后，通过最大化后验概率进行排序。针对BPR-OPT模型，论文提出了一种基于SGD的自采样学习算法。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/MF.PNG">
 <meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/MF-element.PNG">
@@ -97,10 +97,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/BPR_4.PNG">
 <meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/BPR_5.PNG">
 <meta property="og:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/BPR_6.PNG">
-<meta property="og:updated_time" content="2018-09-28T04:31:09.409Z">
+<meta property="og:updated_time" content="2018-09-29T06:49:24.536Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BPR: Bayesian Personalized Ranking from Implicit Feedback">
-<meta name="twitter:description" content="BPR: Bayesian Personalized Ranking from Implicit Feedback摘要物品推荐是在物品集合中预测出个性排序列表的一项任务。从隐式反馈中做个性推荐的方法有很多，比如矩阵分解、k近邻等。虽然这些方法都可用于物品个性化推荐，但是他们都没有直接对排序做优化。这篇论文提出了一种通用的应用于个性化排序的优化方法，这种方法称为BPR-OPT。BPR-OPT是对问题">
+<meta name="twitter:description" content="摘要物品推荐是在物品集合中预测出个性排序列表的一项任务。从隐式反馈中做个性推荐的方法有很多，比如矩阵分解、k近邻等。虽然这些方法都可用于物品个性化推荐，但是他们都没有直接对排序做优化。这篇论文提出了一种通用的应用于个性化排序的优化方法，这种方法称为BPR-OPT。BPR-OPT是对问题做贝叶斯理论分析后，通过最大化后验概率进行排序。针对BPR-OPT模型，论文提出了一种基于SGD的自采样学习算法。">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/MF.PNG">
 
 
@@ -361,7 +361,7 @@
       
 
       
-        <h1 id="BPR-Bayesian-Personalized-Ranking-from-Implicit-Feedback"><a href="#BPR-Bayesian-Personalized-Ranking-from-Implicit-Feedback" class="headerlink" title="BPR: Bayesian Personalized Ranking from Implicit Feedback"></a>BPR: Bayesian Personalized Ranking from Implicit Feedback</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>物品推荐是在物品集合中预测出个性排序列表的一项任务。从隐式反馈中做个性推荐的方法有很多，比如矩阵分解、k近邻等。虽然这些方法都可用于物品个性化推荐，但是他们都没有直接对排序做优化。这篇论文提出了一种通用的应用于个性化排序的优化方法，这种方法称为BPR-OPT。BPR-OPT是对问题做贝叶斯理论分析后，通过最大化后验概率进行排序。针对BPR-OPT模型，论文提出了一种基于SGD的自采样学习算法。<br>BPR是一种基于矩阵分解的排序算法，与funkSVD之类的算法比，它不是做全局的评分优化，而是针对每一个用户自己的商品喜好分贝做排序优化。因此在迭代优化的思路上完全不同。同时对于训练集的要求也是不一样的，funkSVD只需要用户物品对应评分数据二元组做训练集，而BPR则需要用户对商品的喜好排序三元组做训练集。<br>在实际产品中，BPR之类的推荐排序在海量数据中选择极少量数据做推荐的时候有优势，因此在某宝某东等大厂中应用也很广泛。</p>
+        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>物品推荐是在物品集合中预测出个性排序列表的一项任务。从隐式反馈中做个性推荐的方法有很多，比如矩阵分解、k近邻等。虽然这些方法都可用于物品个性化推荐，但是他们都没有直接对排序做优化。这篇论文提出了一种通用的应用于个性化排序的优化方法，这种方法称为BPR-OPT。BPR-OPT是对问题做贝叶斯理论分析后，通过最大化后验概率进行排序。针对BPR-OPT模型，论文提出了一种基于SGD的自采样学习算法。<br>BPR是一种基于矩阵分解的排序算法，与funkSVD之类的算法比，它不是做全局的评分优化，而是针对每一个用户自己的商品喜好分贝做排序优化。因此在迭代优化的思路上完全不同。同时对于训练集的要求也是不一样的，funkSVD只需要用户物品对应评分数据二元组做训练集，而BPR则需要用户对商品的喜好排序三元组做训练集。<br>在实际产品中，BPR之类的推荐排序在海量数据中选择极少量数据做推荐的时候有优势，因此在某宝某东等大厂中应用也很广泛。</p>
 <h2 id="BPR模型"><a href="#BPR模型" class="headerlink" title="BPR模型"></a>BPR模型</h2><h3 id="模型介绍"><a href="#模型介绍" class="headerlink" title="模型介绍"></a>模型介绍</h3><p>BPR基于矩阵分解模型，给定用户集U和物品集I，以及稀疏的用户-物品交互矩阵X，通过矩阵分解得到低维的用户矩阵W（|U|<em>k）和物品矩阵H（|I|</em>k）。通过优化算法使得X^尽可能与实际的X相近。</p>
 <p><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/MF.PNG" alt="image"></p>
 <p>用户u对物品i的喜好程度通过用户向量wu和物品向量hi计算得到。<br><img src="https://raw.githubusercontent.com/wechanhe/PictureRepo/master/BPR/MF-element.PNG" alt="image"></p>
@@ -618,7 +618,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BPR-Bayesian-Personalized-Ranking-from-Implicit-Feedback"><span class="nav-number">1.</span> <span class="nav-text">BPR: Bayesian Personalized Ranking from Implicit Feedback</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BPR模型"><span class="nav-number">1.2.</span> <span class="nav-text">BPR模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型介绍"><span class="nav-number">1.2.1.</span> <span class="nav-text">模型介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BPR优化算法"><span class="nav-number">1.2.2.</span> <span class="nav-text">BPR优化算法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BPR模型"><span class="nav-number">2.</span> <span class="nav-text">BPR模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型介绍"><span class="nav-number">2.1.</span> <span class="nav-text">模型介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BPR优化算法"><span class="nav-number">2.2.</span> <span class="nav-text">BPR优化算法</span></a></li></ol></li></ol></div>
             
 
           </div>
